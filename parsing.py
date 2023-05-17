@@ -28,7 +28,6 @@ with tqdm(total=len(df)) as pbar:
     for query, x, y in tqdm(zip(df['사업장명'].values, df['X'].values, df['Y'].values)):
         try:
             availables.append(is_available_restaurant(query=query, x=float(x), y=float(y)))
-            #time.sleep(0.5)
             pbar.update(1)
         except Exception as e:
             print(e)
